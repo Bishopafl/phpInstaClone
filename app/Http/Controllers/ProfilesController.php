@@ -17,7 +17,7 @@ class ProfilesController extends Controller
         // find the user in the database
         $user = User::findOrFail($user);
         // return the user data via an array back to the view
-        return view('home', [
+        return view('profiles.index', [
             'user' => $user,
         ]);
     }
