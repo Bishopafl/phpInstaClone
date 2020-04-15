@@ -37,7 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // since using the hasOne() the public function is singular
     public function profile() {
-        return $this->hasOne(Profile::class);
+        return $this->hasOne(Profile::class); 
+    }
+
+    // using the hasMany() function, this function must be plural
+    public function posts() {
+        return $this->hasMany(Post::class);
     }
 }
