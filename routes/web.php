@@ -24,6 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 // Customized controller that handles the url string for a users post
-Route::get('/p', 'PostsController@create');
+Route::get('/p/create', 'PostsController@create');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
