@@ -25,5 +25,7 @@ Auth::routes();
 
 // Customized controller that handles the url string for a users post
 Route::get('/p/create', 'PostsController@create');
+// Customized post method for Creating a new post from /p on create.b
+Route::post('/p', 'PostsController@store');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
