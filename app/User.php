@@ -44,6 +44,7 @@ class User extends Authenticatable
 
     // using the hasMany() function, this function must be plural
     public function posts() {
-        return $this->hasMany(Post::class);
+        // will return posts ordered by desending
+        return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
     }
 }

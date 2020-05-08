@@ -9,10 +9,10 @@
         <div class="col-7 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username }}</h1>
-                <a href="#">Add New Post</a>
+                <a href="/p/create">Add New Post</a>
             </div>
             <div class="d-flex">
-                <div class="pr-5"> <strong>289</strong> posts</div>
+                <div class="pr-5"> <strong>{{ $user->posts->count() }}</strong> posts</div>
                 <div class="pr-5"> <strong>43.3k</strong> followers</div>
                 <div class="pr-5"> <strong>212</strong> following</div>
             </div>
@@ -22,15 +22,14 @@
         </div>
     </div>
     <div class="row pt-5">
-        <div class="col-4">
-            <img src="https://lh3.googleusercontent.com/J3_JT7LTVT3KtBa7JFYScqGpweKWM0ecXlmEGHAJvmBqb4VN7MStUK3jrQk_kZz9z--szyQWVyM0mDlqsMrY7f9ZG4MpRNK_bVZ3C4bTeySxP-r9DaIlR5IAjVnOrFQdyB5sJzf8IsPYnwIppQedXaRa6JxvK39XiFbcarwf7i8vjj4sikkaRA7QT2WpvwQ62CMORovNAir3glbJrj3k1U3icF91UsS1EMA-jLujtWf8v6fwA0ybQNo-PlRpAykUNpxEt2VKcGQs9d-D5kp1vR-nsPU6LvUCtVgonu1FXKU-rYRrDOmT5QZrYM76srT02oUrhoGGsurktiYCSfC8CqZdtEdNyrZ34O1jKCemv2xGAeJbwLD4NlJ6RuyBxm60mq15QIFBr4sOJSbuGgu9n5dir4W9XtZ2AWaTsNHxPMkVpRidbtFYINzdn14txzFAoKlko1cX8n9y1lXZDW5R_7iCsOOtoa9BvP94BM5zN_rootVqRUm09EN4-fHa2MOVgCvDGZ1DhQkqFVswIk5Ze_IQ4uJ6YUY8DI85yKERJbSX_zvHZXm6WYTwtZY0LDOSgOS6mISwDLPXhMFOwvWPafQ6ByyFVvkrWzIGX91i1up7g_KoUKLUMRhPJFvNj-malw2d-fsyQvTacYaaKO3NrmCojTTZfyGUjsaEj6s8MqB-_daOV_ZMUT8t8dkQpQ=w283-h212-no" class="w-100">
-        </div>  
-        <div class="col-4">
-            <img src="https://lh3.googleusercontent.com/J3_JT7LTVT3KtBa7JFYScqGpweKWM0ecXlmEGHAJvmBqb4VN7MStUK3jrQk_kZz9z--szyQWVyM0mDlqsMrY7f9ZG4MpRNK_bVZ3C4bTeySxP-r9DaIlR5IAjVnOrFQdyB5sJzf8IsPYnwIppQedXaRa6JxvK39XiFbcarwf7i8vjj4sikkaRA7QT2WpvwQ62CMORovNAir3glbJrj3k1U3icF91UsS1EMA-jLujtWf8v6fwA0ybQNo-PlRpAykUNpxEt2VKcGQs9d-D5kp1vR-nsPU6LvUCtVgonu1FXKU-rYRrDOmT5QZrYM76srT02oUrhoGGsurktiYCSfC8CqZdtEdNyrZ34O1jKCemv2xGAeJbwLD4NlJ6RuyBxm60mq15QIFBr4sOJSbuGgu9n5dir4W9XtZ2AWaTsNHxPMkVpRidbtFYINzdn14txzFAoKlko1cX8n9y1lXZDW5R_7iCsOOtoa9BvP94BM5zN_rootVqRUm09EN4-fHa2MOVgCvDGZ1DhQkqFVswIk5Ze_IQ4uJ6YUY8DI85yKERJbSX_zvHZXm6WYTwtZY0LDOSgOS6mISwDLPXhMFOwvWPafQ6ByyFVvkrWzIGX91i1up7g_KoUKLUMRhPJFvNj-malw2d-fsyQvTacYaaKO3NrmCojTTZfyGUjsaEj6s8MqB-_daOV_ZMUT8t8dkQpQ=w283-h212-no" class="w-100">
-        </div>  
-        <div class="col-4">
-            <img src="https://lh3.googleusercontent.com/J3_JT7LTVT3KtBa7JFYScqGpweKWM0ecXlmEGHAJvmBqb4VN7MStUK3jrQk_kZz9z--szyQWVyM0mDlqsMrY7f9ZG4MpRNK_bVZ3C4bTeySxP-r9DaIlR5IAjVnOrFQdyB5sJzf8IsPYnwIppQedXaRa6JxvK39XiFbcarwf7i8vjj4sikkaRA7QT2WpvwQ62CMORovNAir3glbJrj3k1U3icF91UsS1EMA-jLujtWf8v6fwA0ybQNo-PlRpAykUNpxEt2VKcGQs9d-D5kp1vR-nsPU6LvUCtVgonu1FXKU-rYRrDOmT5QZrYM76srT02oUrhoGGsurktiYCSfC8CqZdtEdNyrZ34O1jKCemv2xGAeJbwLD4NlJ6RuyBxm60mq15QIFBr4sOJSbuGgu9n5dir4W9XtZ2AWaTsNHxPMkVpRidbtFYINzdn14txzFAoKlko1cX8n9y1lXZDW5R_7iCsOOtoa9BvP94BM5zN_rootVqRUm09EN4-fHa2MOVgCvDGZ1DhQkqFVswIk5Ze_IQ4uJ6YUY8DI85yKERJbSX_zvHZXm6WYTwtZY0LDOSgOS6mISwDLPXhMFOwvWPafQ6ByyFVvkrWzIGX91i1up7g_KoUKLUMRhPJFvNj-malw2d-fsyQvTacYaaKO3NrmCojTTZfyGUjsaEj6s8MqB-_daOV_ZMUT8t8dkQpQ=w283-h212-no" class="w-100">
-        </div>  
+        @foreach($user->posts as $post)
+            <div class="col-4 pb-4">
+                <img src="/storage/{{ $post->image }}" class="w-100">
+            </div>  
+        @endforeach
+
+
+        
     </div>
 </div>
 @endsection
