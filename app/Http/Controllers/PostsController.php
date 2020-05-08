@@ -23,9 +23,20 @@ class PostsController extends Controller
             'caption' => 'required',
             'image' => ['required', 'image'],
         ]);
+        // if an image was uploaded, put it in the uploads directory
+        // store() uses two parameters - folder where your storing, driver the image resource would be stored on.
+        // the driver can be an amazon service using S3 if need be.
+        // -----------------------------------
+        // Trying to access the uploads through the browser?
+        // Tip, using 'php artisan storage:link'
+        // Why? That command creates a symbolic link between public/storage and storage/app/public
+        // -----------------------------------
+        $imagePath = request('image')->store('uploads','public');
         // get authenticated user, go into posts and create their post!
-        auth()->user()->posts()->create($data);
-
-        dd( request()->all() );
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'image' => $imagePath,
+        ]);
+        return redirect('/profile/' . auth()->user()->id);
     }
 }
